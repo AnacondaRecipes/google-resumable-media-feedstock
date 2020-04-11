@@ -1,0 +1,224 @@
+commit c8d93ff913e2fd27aa8e1293e7830222e89fe486
+Author: conda-forge-admin <conda-forge-admin@email.com>
+Date:   Mon Mar 2 20:23:53 2020 +0000
+
+    [ci skip] [skip ci] [cf admin skip] ***NO_CI*** admin migration AutomergeAndRerender
+
+commit fdaeb2f39af35e8325ad1378b261d36448857e72
+Merge: 24dc1d6 adf23be
+Author: Tim Swast <swast@google.com>
+Date:   Wed Jan 15 15:52:01 2020 -0600
+
+    Merge pull request #12 from tswast/master
+    
+    add Leah as maintainer, update docs links
+
+commit adf23be254077ef097a27a5e665d08e58c514e78
+Author: conda-forge-admin <pelson.pub+conda-forge@gmail.com>
+Date:   Tue Jan 14 17:24:05 2020 +0000
+
+    MNT: Re-rendered with conda-build 3.18.11, conda-smithy 3.6.5, and conda-forge-pinning 2020.01.10
+
+commit fe33b7287cd5dffa73c3ebb31d59073627b4bb32
+Author: Tim Swast <swast@google.com>
+Date:   Tue Jan 14 11:21:45 2020 -0600
+
+    add Leah as maintainer, update docs links
+
+commit 24dc1d62a92db9db962880077fd28c3960e6a0f1
+Merge: df4bb15 fc6c908
+Author: Tim Swast <swast@google.com>
+Date:   Tue Nov 5 08:57:57 2019 -0800
+
+    Merge pull request #11 from regro-cf-autotick-bot/0.5.0
+    
+    google-resumable-media v0.5.0
+
+commit fc6c908729392e2cab7a5821801953e83680db73
+Author: regro-cf-autotick-bot <circleci@cf-graph.regro.github.com>
+Date:   Tue Oct 29 20:17:47 2019 +0000
+
+    MNT: Re-rendered with conda-build 3.18.10, conda-smithy 3.6.0, and conda-forge-pinning 2019.10.28
+
+commit d5977747cd6cfb026bba93f36313a84c427ff3e0
+Author: regro-cf-autotick-bot <circleci@cf-graph.regro.github.com>
+Date:   Tue Oct 29 20:17:31 2019 +0000
+
+    updated v0.5.0
+
+commit df4bb158efa64ce6e38c48041c5e189a7d8a9543
+Merge: afd45f6 fa48840
+Author: Tim Swast <swast@google.com>
+Date:   Mon Sep 23 17:08:09 2019 -0500
+
+    Merge pull request #10 from regro-cf-autotick-bot/0.4.1
+    
+    google-resumable-media v0.4.1
+
+commit fa4884017ab43c371be4bc19aec2fbee539914b2
+Author: regro-cf-autotick-bot <circleci@cf-graph.regro.github.com>
+Date:   Tue Sep 17 17:19:12 2019 +0000
+
+    MNT: Re-rendered with conda-build 3.18.9, conda-smithy 3.4.7, and conda-forge-pinning 2019.09.08
+
+commit 83d9ba892c5658fc7948868e308fa0294ca16786
+Author: regro-cf-autotick-bot <circleci@cf-graph.regro.github.com>
+Date:   Tue Sep 17 17:18:59 2019 +0000
+
+    updated v0.4.1
+
+commit afd45f662408def82044660d2dbe2d4499af80d7
+Merge: b159939 fb4c4b1
+Author: Tim Swast <swast@google.com>
+Date:   Tue Aug 27 18:05:22 2019 -0700
+
+    Merge pull request #8 from regro-cf-autotick-bot/0.3.3
+    
+    google-resumable-media v0.3.3
+
+commit fb4c4b1c9d8dcbb53d227e47c6bf78d82a96ebee
+Author: Tim Swast <swast@google.com>
+Date:   Tue Aug 27 17:53:47 2019 -0700
+
+    Move requests to optional run_constrained dependency.
+
+commit ba2ceee5002f59df9d123788ed25448f477c165b
+Author: Tim Swast <swast@google.com>
+Date:   Tue Aug 27 17:50:51 2019 -0700
+
+    Add requests as dependency.
+
+commit a2002ee44edf6dd9d302364da0bcd40d2817531d
+Author: regro-cf-autotick-bot <circleci@cf-graph.regro.github.com>
+Date:   Mon Aug 26 22:26:07 2019 +0000
+
+    MNT: Re-rendered with conda-build 3.18.9, conda-smithy 3.4.1, and conda-forge-pinning 2019.08.22
+
+commit 83b7e2a7830251d5758c7938215cc8d73f82107e
+Author: regro-cf-autotick-bot <circleci@cf-graph.regro.github.com>
+Date:   Mon Aug 26 22:25:54 2019 +0000
+
+    updated v0.3.3
+
+commit b1599399c9e3371476052164108843026601ed2e
+Merge: 2c073f1 da775bb
+Author: Filipe <ocefpaf@gmail.com>
+Date:   Fri Dec 21 11:18:22 2018 -0200
+
+    Merge pull request #6 from regro-cf-autotick-bot/0.3.2
+    
+    google-resumable-media v0.3.2
+
+commit da775bbc021cdc89914ca6f36daaf268df9e2b98
+Author: Filipe Fernandes <ocefpaf@gmail.com>
+Date:   Fri Dec 21 11:12:53 2018 -0200
+
+    update-cb3
+
+commit d80702534f2bdf827e2ec09b60d41b9392cf0e24
+Author: regro-cf-autotick-bot <circleci@cf-graph.regro.github.com>
+Date:   Thu Dec 20 23:13:00 2018 +0000
+
+    MNT: Re-rendered with conda-smithy 3.2.2 and pinning 2018.12.18
+
+commit 83c9865be0acc13722b4ef5c94d5cd54d0ed801d
+Author: regro-cf-autotick-bot <circleci@cf-graph.regro.github.com>
+Date:   Thu Dec 20 23:12:56 2018 +0000
+
+    updated v0.3.2
+
+commit 2c073f17b77acb2bece38ab50ff01cfe218e4c58
+Author: Travis CI User <travis@example.org>
+Date:   Sat Aug 4 18:18:15 2018 +0000
+
+    [ci skip] [skip ci] Update anaconda token
+
+commit add67fc8796dfa67f93131ca24a7b6017eee7949
+Merge: b279d4d 1af43ec
+Author: Tim Swast <swast@google.com>
+Date:   Tue Nov 21 08:44:59 2017 -0800
+
+    Merge pull request #5 from stuarteberg/update-to-0.3.1
+    
+    Update to 0.3.1
+
+commit 1af43ecb32de8b72df2fe1882a6dc89c30b38d20
+Author: conda-forge-admin <pelson.pub+conda-forge@gmail.com>
+Date:   Tue Nov 21 13:48:47 2017 +0000
+
+    MNT: Re-rendered with conda-smithy 2.4.3
+
+commit a0c6cff48184b9b67f6232173fbf17caea3dee55
+Author: Stuart Berg <bergs@janelia.hhmi.org>
+Date:   Tue Nov 21 08:08:51 2017 -0500
+
+    Set noarch: python
+
+commit 83041be88338fa100801e607ce88e185283bc6a2
+Author: Stuart Berg <bergs@janelia.hhmi.org>
+Date:   Mon Nov 20 17:52:00 2017 -0500
+
+    Update to 0.3.1
+
+commit b279d4d0d4f99b78c8f06e0e22345aa47848c282
+Merge: f272728 8f4c96b
+Author: Anthonios Partheniou <apartheniou@electricalengineer.ca>
+Date:   Fri Oct 13 22:06:51 2017 -0400
+
+    Merge pull request #4 from parthea/add-maintainer-tswast
+    
+    Add tswast as maintainer
+
+commit 8f4c96bf329b4fe66900c3d53c4da8909d4e25de
+Author: Anthonios Partheniou <apartheniou@electricalengineer.ca>
+Date:   Fri Oct 13 15:23:22 2017 -0400
+
+    Add tswast as maintainer
+
+commit f272728f86f2871ef2e87b0fb0b638f6a6be264c
+Merge: 0a251d0 d05c97a
+Author: Anthonios Partheniou <apartheniou@electricalengineer.ca>
+Date:   Thu Oct 12 11:09:40 2017 -0400
+
+    Merge pull request #1 from parthea/release-0.2.3
+    
+    Release 0.2.3
+
+commit 0a251d033399fb3dd777a3a2d947a375305444c9
+Merge: 48917c0 8cbfc11
+Author: Johannes Köster <johannes.koester@tu-dortmund.de>
+Date:   Thu Oct 12 17:00:40 2017 +0200
+
+    Merge pull request #2 from parthea/add-maintainer
+    
+    Add parthea as maintainer
+
+commit 8cbfc1120f0ef8c1740390e5f11ca96df18ae8ce
+Author: Anthonios Partheniou <apartheniou@electricalengineer.ca>
+Date:   Mon Oct 9 11:31:46 2017 -0400
+
+    Add parthea as maintainer
+
+commit d05c97af6b33ef774d928b81ed1a44cc1628660e
+Author: Anthonios Partheniou <apartheniou@electricalengineer.ca>
+Date:   Mon Oct 9 11:25:27 2017 -0400
+
+    Release 0.2.3
+
+commit 48917c0a2727f97c9df9ed624ba81fc329d75ec0
+Author: Travis-CI on github.com/conda-forge/staged-recipes <conda-forge@googlegroups.com>
+Date:   Sat Aug 26 21:54:49 2017 +0000
+
+    [ci skip] [skip ci] Update anaconda token
+
+commit 29b3a81219468f87aca5293978fa8f24dcca17a3
+Author: Travis-CI on github.com/conda-forge/staged-recipes <conda-forge@googlegroups.com>
+Date:   Fri Jun 23 05:15:20 2017 +0000
+
+    Re-render the feedstock after CI registration.
+
+commit b251e9d918ac737ce09b41994220f168f684391a
+Author: Travis-CI on github.com/conda-forge/staged-recipes <conda-forge@googlegroups.com>
+Date:   Fri Jun 23 05:10:43 2017 +0000
+
+    Initial feedstock commit with conda-smithy 2.3.2.
