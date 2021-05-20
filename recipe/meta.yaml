@@ -15,10 +15,10 @@ build:
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
   run:
-    - python >=3.5
+    - python >=3.6
     - six
     - google-crc32c >=1.0,<2.0dev  # [py>=35]
   run_constrained:
