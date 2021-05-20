@@ -18,15 +18,22 @@ requirements:
     - python
     - pip
   run:
-    - python
+    - python >=3.5
     - six
+    - google-crc32c >=1.0,<2.0dev  # [py>=35]
   run_constrained:
     - requests >=2.18.0,<3.0.0dev
+    - aiohttp >=3.6.2,<4.0.0dev  # [py>=36]
 
 test:
+  requires:
+    - python
+    - pip
   imports:
     - google
     - google.resumable_media
+  commands:
+    - python -m pip check
 
 about:
   home: https://github.com/googleapis/google-resumable-media-python
