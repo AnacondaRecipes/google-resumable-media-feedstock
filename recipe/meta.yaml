@@ -17,9 +17,11 @@ requirements:
   host:
     - python >=3.6
     - pip
+    - setuptools
+    - wheel
   run:
     - python >=3.6
-    - six
+    - six >=1.4.0
     - google-crc32c >=1.0,<2.0dev  # [py>=35]
   run_constrained:
     - requests >=2.18.0,<3.0.0dev
