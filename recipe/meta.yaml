@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: True #[py<37]
+  skip: True  # [py<37]
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
@@ -54,3 +54,6 @@ extra:
     - leahecole
     - parthea
     - tswast
+  skip-lints:
+    - missing_doc_source_url
+    - invalid_url
