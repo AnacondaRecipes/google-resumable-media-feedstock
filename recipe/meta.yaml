@@ -1,5 +1,5 @@
 {% set name = "google-resumable-media" %}
-{% set version = "2.4.0" %}
+{% set version = "2.7.1" %}
 
 package:
   name: {{ name }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8d5518502f92b9ecc84ac46779bd4f09694ecb3ba38a3e7ca737a86d15cbca1f
+  sha256: eae451a7b2e2cdbaaa0fd2eb00cc8a1ee5e95e16b55597359cbc3d27d7d90e33
 
 build:
   number: 0
   skip: True  # [py<37]
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: "{{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv"
 
 requirements:
   host:
@@ -26,6 +26,7 @@ requirements:
   run_constrained:
     - requests >=2.18.0,<3.0.0dev
     - aiohttp >=3.6.2,<4.0.0dev
+    - google-auth >=1.22.0,< 2.0dev
 
 test:
   requires:
@@ -46,7 +47,6 @@ about:
   license: Apache-2.0
   license_family: APACHE
   license_file: LICENSE
-  license_url: https://github.com/googleapis/google-resumable-media-python/blob/v2.4.0/LICENSE
 
 extra:
   recipe-maintainers:
