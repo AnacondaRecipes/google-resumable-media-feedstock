@@ -26,7 +26,10 @@ requirements:
   run_constrained:
     - requests >=2.18.0,<3.0.0dev
     - aiohttp >=3.6.2,<4.0.0dev
-    - google-auth >=1.22.0,< 2.0dev
+    # Commenting google-auth <2 upper bound to not block google-cloud-storage, which depends on google-auth>=2.26.1
+    # Related: https://github.com/googleapis/google-resumable-media-python/issues/417
+    #- google-auth >=1.22.0,< 2.0dev
+    - google-auth >=1.22.0
 
 test:
   requires:
