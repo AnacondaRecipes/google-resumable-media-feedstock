@@ -51,7 +51,7 @@ test:
   commands:
     - pip check
     - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
-    - pytest -v tests {{ ignore_tests }}
+    - pytest -v tests {{ ignore_tests }} {{ deselect_test }}
 
 about:
   home: https://github.com/googleapis/google-resumable-media-python
