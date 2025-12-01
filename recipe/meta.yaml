@@ -30,6 +30,11 @@ requirements:
 
 # ERROR tests/system/requests - ModuleNotFoundError: No module named 'test_utils'
 {% set ignore_tests = " --ignore=tests/system/requests" %}
+# E       PermissionError: [Errno 13] Permission denied: 'C:\\Users\\TASK_1~2\\AppData\\Local\\Temp\\tmp65dhd8ju'
+{% set deselect_test = " --deselect=tests/unit/requests/test_upload.py::test_mpu_part" %}  # [win]
+{% set deselect_test = deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part" %}  # [win]
+{% set deselect_test = deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part_checksum_failure" %}  # [win]
+{% set deselect_test = deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part_checksum_success" %}  # [win]
 
 test:
   source_files:
