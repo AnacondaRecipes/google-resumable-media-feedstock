@@ -1,5 +1,5 @@
 {% set name = "google-resumable-media" %}
-{% set version = "2.7.2" %}
+{% set version = "2.8.0" %}
 
 package:
   name: {{ name }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: 5280aed4629f2b60b847b0d42f9857fd4935c11af266744df33d8074cae92fe0
+  sha256: f1157ed8b46994d60a1bc432544db62352043113684d4e030ee02e77ebe9a1ae
 
 build:
   number: 0
-  skip: True  # [py<37]
+  skip: true  # [py<37]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
@@ -22,24 +22,37 @@ requirements:
     - wheel
   run:
     - python
-    - google-crc32c >=1.0,<2.0dev
+    - google-crc32c >=1.0.0,<2.0.0
   run_constrained:
-    - requests >=2.18.0,<3.0.0dev
-    - aiohttp >=3.6.2,<4.0.0dev
-    # Commenting google-auth <2 upper bound to not block google-cloud-storage, which depends on google-auth>=2.26.1
-    # Related: https://github.com/googleapis/google-resumable-media-python/issues/417
-    #- google-auth >=1.22.0,< 2.0dev
-    - google-auth >=1.22.0
+    - requests >=2.18.0,<3.0.0
+    - aiohttp >=3.6.2,<4.0.0
+    - google-auth >=1.22.0,<2.0.0
+
+# ERROR tests/system/requests - ModuleNotFoundError: No module named 'test_utils'
+{% set ignore_tests = " --ignore=tests/system/requests" %}
+{% set deselect_test = "" %}
+# E       PermissionError: [Errno 13] Permission denied: 'C:\\Users\\TASK_1~2\\AppData\\Local\\Temp\\tmp65dhd8ju'
+{% set deselect_test = " --deselect=tests/unit/requests/test_upload.py::test_mpu_part" %}  # [win]
+{% set deselect_test = deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part" %}  # [win]
+{% set deselect_test = deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part_checksum_failure" %}  # [win]
+{% set deselect_test = deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part_checksum_success" %}  # [win]
 
 test:
-  requires:
-    - python
-    - pip
+  source_files:
+    - tests
   imports:
     - google
     - google.resumable_media
+  requires:
+    - pip
+    - pytest
+    - urllib3
+    - requests
+    - google-auth
   commands:
-    - python -m pip check
+    - pip check
+    - python -c "from importlib.metadata import version; assert(version('{{ name }}')=='{{ version }}')"
+    - pytest -v tests {{ ignore_tests }} {{ deselect_test }}
 
 about:
   home: https://github.com/googleapis/google-resumable-media-python
