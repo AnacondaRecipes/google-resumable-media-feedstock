@@ -1,14 +1,6 @@
 {% set name = "google-resumable-media" %}
 {% set version = "2.8.2" %}
-{% set ignore_tests = " --ignore=tests/system/requests" %}
-{% set deselect_test = "" %}
-{% set deselect_test = " --deselect=tests/unit/requests/test_upload.py::test_mpu_part" %}  # [win]
-{% set deselect_test = 'deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part"' %}  # [win]
-{% set deselect_test = 'deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part_checksum_failure"' %}  # [win]
-{% set deselect_test = 'deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part_checksum_success"' %}  # [win]
 
-# ERROR tests/system/requests - ModuleNotFoundError: No module named 'test_utils'
-# E       PermissionError: [Errno 13] Permission denied: 'C:\\Users\\TASK_1~2\\AppData\\Local\\Temp\\tmp65dhd8ju'
 package:
   name: {{ name }}
   version: {{ version }}
@@ -19,7 +11,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [py<37]
+  skip: true  # [py<39]
   script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
 
 requirements:
@@ -35,6 +27,15 @@ requirements:
     - requests >=2.18.0,<3.0.0
     - aiohttp >=3.6.2,<4.0.0
     - google-auth >=1.22.0,<2.0.0
+
+# ERROR tests/system/requests - ModuleNotFoundError: No module named 'test_utils'
+{% set ignore_tests = " --ignore=tests/system/requests" %}
+{% set deselect_test = "" %}
+# E       PermissionError: [Errno 13] Permission denied: 'C:\\Users\\TASK_1~2\\AppData\\Local\\Temp\\tmp65dhd8ju'
+{% set deselect_test = " --deselect=tests/unit/requests/test_upload.py::test_mpu_part" %}  # [win]
+{% set deselect_test = deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part" %}  # [win]
+{% set deselect_test = deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part_checksum_failure" %}  # [win]
+{% set deselect_test = deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part_checksum_success" %}  # [win]
 
 test:
   source_files:
@@ -57,7 +58,7 @@ about:
   home: https://github.com/googleapis/google-resumable-media-python
   summary: Utilities for Google Media Downloads and Resumable Uploads
   description: Utilities for Google Media Downloads and Resumable Uploads
-  doc_url: https://cloud.google.com/python/docs/reference/google-resumable-media/latest
+  doc_url: https://docs.cloud.google.com/python/docs/reference/google-resumable-media/latest
   dev_url: https://github.com/googleapis/google-resumable-media-python
   license: Apache-2.0
   license_family: APACHE
