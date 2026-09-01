@@ -1,13 +1,21 @@
 {% set name = "google-resumable-media" %}
-{% set version = "2.8.2" %}
+{% set version = "2.10.2" %}
+{% set ignore_tests = " --ignore=tests/system/requests" %}
+{% set deselect_test = "" %}
+{% set deselect_test = " --deselect=tests/unit/requests/test_upload.py::test_mpu_part" %}  # [win]
+{% set deselect_test = 'deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part"' %}  # [win]
+{% set deselect_test = 'deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part_checksum_failure"' %}  # [win]
+{% set deselect_test = 'deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part_checksum_success"' %}  # [win]
 
+# ERROR tests/system/requests - ModuleNotFoundError: No module named 'test_utils'
+# E       PermissionError: [Errno 13] Permission denied: 'C:\\Users\\TASK_1~2\\AppData\\Local\\Temp\\tmp65dhd8ju'
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace("-", "_") }}-{{ version }}.tar.gz
-  sha256: f3354a182ebd193ae3f42e3ef95e6c9b10f128320de23ac7637236713b1acd70
+  sha256: 1de441703cd298d75a419bfdc0066e9fc7b0a1de630df96eea8ce8f5c759358c
 
 build:
   number: 0
@@ -26,16 +34,7 @@ requirements:
   run_constrained:
     - requests >=2.18.0,<3.0.0
     - aiohttp >=3.6.2,<4.0.0
-    - google-auth >=1.22.0,<2.0.0
-
-# ERROR tests/system/requests - ModuleNotFoundError: No module named 'test_utils'
-{% set ignore_tests = " --ignore=tests/system/requests" %}
-{% set deselect_test = "" %}
-# E       PermissionError: [Errno 13] Permission denied: 'C:\\Users\\TASK_1~2\\AppData\\Local\\Temp\\tmp65dhd8ju'
-{% set deselect_test = " --deselect=tests/unit/requests/test_upload.py::test_mpu_part" %}  # [win]
-{% set deselect_test = deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part" %}  # [win]
-{% set deselect_test = deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part_checksum_failure" %}  # [win]
-{% set deselect_test = deselect_test + " --deselect=tests/unit/test__upload.py::test_xml_mpu_part_checksum_success" %}  # [win]
+    - google-auth >=2.14.1,<3.0.0
 
 test:
   source_files:
